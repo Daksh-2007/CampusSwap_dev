@@ -29,15 +29,65 @@ let foodMenuList = document.querySelector('.food-item-wrap')
 let foodCategory = document.querySelector('.food-category')
 
 let categories = foodCategory.querySelectorAll('button')
+const itemSearchInput = document.getElementById('item-search')
+const clearItemSearchBtn = document.getElementById('clear-item-search')
 
-Array.from(categories).forEach((item, index) => {
+function applyItemSearch() {
+    if (!foodMenuList) return
+
+    const query = itemSearchInput ? itemSearchInput.value.trim().toLocaleLowerCase() : ''
+    const activeCategory = foodCategory.querySelector('button.active')
+    const categoryType = activeCategory ? activeCategory.getAttribute('data-food-type') : 'all'
+    const items = foodMenuList.querySelectorAll('.food-item')
+    let visibleCount = 0
+
+    items.forEach((item) => {
+        const title = item.querySelector('.item-info h3')
+        const itemName = title ? title.textContent.trim().toLocaleLowerCase() : ''
+        const matchesName = !query || itemName.includes(query)
+        const matchesCategory = categoryType === 'all' || item.classList.contains(categoryType + '-type')
+        const isVisible = matchesName && matchesCategory
+
+        if (query) {
+            item.style.display = isVisible ? 'block' : 'none'
+        } else {
+            item.style.removeProperty('display')
+        }
+        if (isVisible) visibleCount++
+    })
+
+    let emptyMessage = document.getElementById('item-search-empty')
+    if (!emptyMessage) {
+        emptyMessage = document.createElement('p')
+        emptyMessage.id = 'item-search-empty'
+        emptyMessage.className = 'item-search-empty'
+        emptyMessage.textContent = 'No items found. Try a different name or category.'
+        foodMenuList.insertAdjacentElement('afterend', emptyMessage)
+    }
+    emptyMessage.hidden = !query || visibleCount > 0
+
+    if (clearItemSearchBtn) clearItemSearchBtn.hidden = !query
+}
+
+Array.from(categories).forEach((item) => {
     item.onclick = (e) => {
-        let currCat = foodCategory.querySelector('button.active')
-        currCat.classList.remove('active')
-        e.target.classList.add('active')
-        foodMenuList.classList ='food-item-wrap '+ e.target.getAttribute('data-food-type')
+        const selectedCategory = e.currentTarget
+        const currCat = foodCategory.querySelector('button.active')
+        if (currCat) currCat.classList.remove('active')
+        selectedCategory.classList.add('active')
+        foodMenuList.className = 'food-item-wrap ' + selectedCategory.getAttribute('data-food-type')
+        applyItemSearch()
     }
 })
+
+if (itemSearchInput) itemSearchInput.addEventListener('input', applyItemSearch)
+if (clearItemSearchBtn) {
+    clearItemSearchBtn.addEventListener('click', () => {
+        itemSearchInput.value = ''
+        applyItemSearch()
+        itemSearchInput.focus()
+    })
+}
 
 // on scroll animation
 
@@ -926,6 +976,7 @@ window.approveListingRequest = function(requestId) {
         `
         catalogContainer.insertBefore(newItem, catalogContainer.firstChild)
         setupFoodItemInteractions()
+        applyItemSearch()
     }
 
     renderAdminDashboard()
