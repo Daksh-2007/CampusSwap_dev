@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CampusSwap.com </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- MOBILE NAV -->
+    <div class="mb-nav">
+        <div class="mb-move-item"></div>
+        <div class="mb-nav-item active">
+            <a href="#home">
+                <i class="bx bxs-home"></i>
+            </a>
+        </div>
+        <div class="mb-nav-item">
+            <a href="#about">
+                <i class='bx bx-info-circle'></i>
+            </a>
+        </div>
+        <div class="mb-nav-item">
+            <a href="#food-menu-section">
+                <i class='bx bx-grid-alt'></i>
+            </a>
+        </div>
+        <div class="mb-nav-item">
+            <a href="#list-item-section">
+                <i class='bx bx-plus-circle'></i>
+            </a>
+        </div>
+        <div class="mb-nav-item" onclick="openUserModal()">
+            <a href="javascript:void(0)" id="mb-profile-btn">
+                <i class='bx bxs-user'></i>
+            </a>
+        </div>
+    </div>
+    <!-- END MOBILE NAV -->
+    <!-- BACK TO TOP BTN -->
+    <a href="#home" class="back-to-top">
+        <i class="bx bxs-to-top"></i>
+    </a>
+    <!-- END BACK TO TOP BTN -->
+    <!-- TOP NAVIGATION -->
+    <div class="nav">
+        <div class="menu-wrap">
+            <a href="#home">
+                <div class="logo">
+                    CampusSwap
+                </div>
+            </a>
+            <div class="menu h-xs">
+                <a href="#home">
+                    <div class="menu-item active">
+                        Home
+                    </div>
+                </a>
+                <a href="#about">
+                    <div class="menu-item">
+                        About
+                    </div>
+                </a>
+                <a href="#food-menu-section">
+                    <div class="menu-item">
+                        Essentials
+                    </div>
+                </a>
+                <a href="#list-item-section">
+                    <div class="menu-item">
+                        Has Item To List?
+                    </div>
+                </a>
+                <a href="#testimonial">
+                    <div class="menu-item">
+                        Reviews
+                    </div>
+                </a>
+            </div>
+            <div class="right-menu">
+                <button type="button" class="nav-auth-btn" id="nav-profile-btn" onclick="openUserModal()" title="My Profile / Account">
+                    <i class='bx bx-user'></i>
+                    <span id="nav-user-label">Profile</span>
+                </button>
+                <div class="cart-btn" id="cart-icon-btn">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END TOP NAVIGATION -->
+    <!-- SECTION HOME -->
+    <section id="home" class="fullheight align-items-center bg-img bg-img-fixed"
+        style="background-image: url(img/ff2.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-xs-12">
+                    <div class="slogan">
+                        <h1 class="left-to-right play-on-scroll">
+                            CampusSwap
+                        </h1>
+                        <p class="left-to-right play-on-scroll delay-2">
+                            CampusSwap is a peer-to-peer online marketplace designed exclusively for university students
+                            to buy, sell, and trade secondhand college essentials. From textbooks, laptops, and
+                            scientific calculators to dorm furniture, lab gear, and stationery, CampusSwap connects
+                            students within the same campus community for fast, affordable, and safe local exchanges. By
+                            keeping transaction costs low and facilitating convenient on-campus handoffs, CampusSwap
+                            helps students save money, clear out unused gear, and reduce waste across campus.
+                        </p>
+                        <div class="left-to-right play-on-scroll delay-4">
+                            <a href="#food-menu-section">
+                                <button>
+                                    Explore Essentials
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION HOME -->
+    <!-- SECION ABOUT -->
+    <section class="about fullheight align-items-center" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-7 h-xs">
+                    <img src="assets/book.png" alt="College Essentials"
+                        class="fullwidth left-to-right play-on-scroll" style="max-height: 450px; object-fit: contain;">
+                </div>
+                <div class="col-5 col-xs-12 align-items-center">
+                    <div class="about-slogan right-to-left play-on-scroll">
+                        <h3>
+                            <span class="primary-color">Affordable</span> College Gear <span class="primary-color">For Students</span>, by Students
+                        </h3>
+                        <p>
+                            College semesters are expensive enough without paying full retail price for laptops, scientific calculators, engineering textbooks, and dorm tech. CampusSwap gives pre-loved campus essentials a second life, connecting verified students for quick, budget-friendly exchanges right on campus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECION ABOUT -->
+    <!-- COLLEGE ESSENTIALS CATALOG SECTION -->
+    <section class="align-items-center bg-img bg-img-fixed" id="food-menu-section"
+        style="background-image: url(assets/calculus-textbook.jpg);">
+        <div class="container">
+            <div class="food-menu">
+                <h1>
+                    Explore <span class="primary-color">Pre-loved</span> College Essentials
+                </h1>
+                <p>
+                    Browse verified secondhand academic gear, tech peripherals, calculators, and study supplies sold by fellow students on campus.
+                </p>
+                <div class="food-category">
+                    <div class="zoom play-on-scroll">
+                        <button class="active" data-food-type="all">
+                            All Items
+                        </button>
+                    </div>
+                    <div class="zoom play-on-scroll delay-2">
+                        <button data-food-type="tech">
+                            Electronics & Tech
+                        </button>
+                    </div>
+                    <div class="zoom play-on-scroll delay-4">
+                        <button data-food-type="books">
+                            Books & Notes
+                        </button>
+                    </div>
+                    <div class="zoom play-on-scroll delay-6">
+                        <button data-food-type="stationery">
+                            Stationery & Tools
+                        </button>
+                    </div>
+                    <div class="zoom play-on-scroll delay-8">
+                        <button data-food-type="cables">
+                            Cables & Adapters
+                        </button>
+                    </div>
+                </div>
+
+                <div class="food-item-wrap all">
+                    <!-- Item 1: Calculator -->
+                    <div class="food-item tech-type" data-condition="Excellent (Like a New)" data-category="Electronics & Tech" data-desc="Casio FX-991EX scientific calculator in mint working condition, perfect for calculus, physics, and engineering exams.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/calculator.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>Scientific Calculator</h3>
+                                    <span>₹ 650</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Calculus Textbook -->
+                    <div class="food-item books-type" data-condition="Good" data-category="Books & Notes" data-desc="Standard University Calculus & Analytical Geometry textbook. Clean interior pages with slight highlighting.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/calculus-textbook.jpg');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>Calculus Textbook</h3>
+                                    <span>₹ 450</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Reference Book -->
+                    <div class="food-item books-type" data-condition="Unused (Brand New)" data-category="Books & Notes" data-desc="Hardcover academic reference guidebook with complete semester modules, formulas, and mock problems.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/book.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>Academic Reference Book</h3>
+                                    <span>₹ 350</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: HDMI Cable -->
+                    <div class="food-item cables-type" data-condition="Unused (Brand New)" data-category="Cables & Adapters" data-desc="High-speed 4K braided HDMI cable (1.8m), ideal for connecting laptops to campus monitors and dorm TVs.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/hdmi cable.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>High-Speed HDMI Cable</h3>
+                                    <span>₹ 220</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: USB Multi-Adapter -->
+                    <div class="food-item cables-type" data-condition="Excellent (Like a New)" data-category="Cables & Adapters" data-desc="Multi-port USB Type-C & Type-A high-speed hub adapter for modern laptops, tablets, and mobile devices.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/usb adapter.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>USB Hub Adapter</h3>
+                                    <span>₹ 380</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: VGA Cable -->
+                    <div class="food-item cables-type" data-condition="Good" data-category="Cables & Adapters" data-desc="Durable gold-plated VGA display cable for university projector rooms and dual-monitor lab desk setups.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/vgi cabl.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>VGA Display Cable</h3>
+                                    <span>₹ 150</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: Mini Portable Printer -->
+                    <div class="food-item tech-type" data-condition="Excellent (Like a New)" data-category="Electronics & Tech" data-desc="Bluetooth pocket wireless thermal printer for printing class notes, study summaries, and barcode receipts on the go.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/mini printer.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>Portable Mini Printer</h3>
+                                    <span>₹ 1,450</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 8: Engineering Geometry Box -->
+                    <div class="food-item stationery-type" data-condition="Good" data-category="Stationery & Tools" data-desc="Complete precision technical drawing instrument set with brass dividers, compasses, protractor, and rulers.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/geometry_box.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>Geometry Box Set</h3>
+                                    <span>₹ 190</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 9: Paper Desk Organizer -->
+                    <div class="food-item stationery-type" data-condition="Fair" data-category="Stationery & Tools" data-desc="Sturdy metal mesh multi-tier paper and document sorter for dorm study desks and assignment folders.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/paper_organizor.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>Paper Desk Organizer</h3>
+                                    <span>₹ 240</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 10: Heavy Duty Paper Punch -->
+                    <div class="food-item stationery-type" data-condition="Good" data-category="Stationery & Tools" data-desc="Metal 2-hole heavy duty puncher for binding assignments, lab records, and semester journals.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/paper_punch.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>Heavy Duty Paper Punch</h3>
+                                    <span>₹ 160</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 11: Blank A4 Assignment Sheets Pack -->
+                    <div class="food-item stationery-type" data-condition="Unused (Brand New)" data-category="Stationery & Tools" data-desc="500 sheets of premium 75 GSM bright white unruled/ruled assignment printing and note-taking sheets.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/blank A4 pages.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>Blank A4 Pages Pack</h3>
+                                    <span>₹ 210</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 12: Self-Inking Date Stamp -->
+                    <div class="food-item stationery-type" data-condition="Acceptable" data-category="Stationery & Tools" data-desc="Adjustable rotary date verification stamp for project submissions, library logs, and assignment records.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/date_stamp.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>Rotary Date Stamp</h3>
+                                    <span>₹ 110</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 13: Stamp Inkpad -->
+                    <div class="food-item stationery-type" data-condition="Unused (Brand New)" data-category="Stationery & Tools" data-desc="Fresh black felt pigment inkpad for official document approvals, verification stamps, and club paperwork.">
+                        <div class="item-wrap bottom-up play-on-scroll">
+                            <div class="item-img">
+                                <div class="img-holder bg-img"
+                                    style="background-image: url('assets/inkpad.png');"></div>
+                            </div>
+                            <div class="item-info">
+                                <div>
+                                    <h3>Stationery Inkpad</h3>
+                                    <span>₹ 75</span>
+                                </div>
+                                <div class="cart-btn">
+                                    <i class="bx bx-cart-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END COLLEGE ESSENTIALS CATALOG SECTION -->
+
+    <!-- HAS ITEM TO LIST SECTION -->
+    <section class="align-items-center" id="list-item-section">
+        <div class="container">
+            <div class="list-item-container bottom-up play-on-scroll">
+                <div class="list-item-header">
+                    <span class="section-badge"><i class='bx bx-store-alt'></i> Student Seller Hub</span>
+                    <h1>Has Item to <span class="primary-color">List?</span></h1>
+                    <p>Have an unused calculator, textbook, cables, or tech gear? Submit a listing request below. Once the admin reviews and approves your submission, it will immediately appear live in our catalog!</p>
+                </div>
+                <form id="item-listing-form" class="listing-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="list-item-name"><i class='bx bx-purchase-tag-alt'></i> Item Name *</label>
+                            <input type="text" id="list-item-name" placeholder="e.g. iPad 9th Gen, Casio FX-991CW, USB-C Hub" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="list-item-category"><i class='bx bx-category'></i> Category *</label>
+                            <select id="list-item-category" required>
+                                <option value="tech">Electronics & Tech</option>
+                                <option value="books">Books & Notes</option>
+                                <option value="stationery">Stationery & Tools</option>
+                                <option value="cables">Cables & Adapters</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="list-item-price"><i class='bx bx-rupee'></i> Expected Price (₹) *</label>
+                            <input type="number" id="list-item-price" placeholder="e.g. 450" min="10" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="list-item-condition"><i class='bx bx-check-shield'></i> Condition *</label>
+                            <select id="list-item-condition" required>
+                                <option value="Unused (Brand New)">Unused (Brand New)</option>
+                                <option value="Excellent (Like a New)" selected>Excellent (Like a New)</option>
+                                <option value="Good">Good</option>
+                                <option value="Fair">Fair</option>
+                                <option value="Acceptable">Acceptable</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-span">
+                            <label for="list-item-desc"><i class='bx bx-detail'></i> Item Description *</label>
+                            <textarea id="list-item-desc" rows="3" placeholder="Describe the item condition, semester/subject, brand, working status..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="list-item-image"><i class='bx bx-image'></i> Item Image *</label>
+                            <div class="img-input-row">
+                                <input type="file" id="list-item-file" accept="image/*" style="display:none">
+                                <button type="button" class="file-browse-btn" onclick="document.getElementById('list-item-file').click()"><i class='bx bx-upload'></i> Choose File</button>
+                                <input type="text" id="list-item-img-url" placeholder="Or enter image URL / asset path" value="assets/calculator.png">
+                            </div>
+                            <small class="form-hint" id="file-chosen-name">Default: assets/calculator.png (or pick custom file/URL)</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="list-user-email"><i class='bx bx-envelope'></i> Student Email *</label>
+                            <input type="email" id="list-user-email" placeholder="student@campus.edu" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="list-user-phone"><i class='bx bx-phone'></i> Phone Number *</label>
+                            <input type="tel" id="list-user-phone" placeholder="+91 9876543210" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="list-user-address"><i class='bx bx-map-pin'></i> Campus Hostel / Handoff Address *</label>
+                            <input type="text" id="list-user-address" placeholder="e.g. Boys Hostel 3, Room 204 or Central Library" required>
+                        </div>
+                    </div>
+                    <div class="form-submit-row">
+                        <button type="submit" class="submit-listing-btn">
+                            <i class='bx bx-send'></i> Submit Listing Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- END HAS ITEM TO LIST SECTION -->
+
+    <!-- TESTIMONIAL SECTION -->
+    <section id="testimonial">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-xs-12">
+                    <div class="review-wrap zoom play-on-scroll delay-2">
+                        <div class="review-content">
+                            <p>
+                                "Found an approved scientific calculator and engineering graphics geometry set for half the retail bookstore price! Met the senior right at the campus library."
+                            </p>
+                            <div class="review-img bg-img"
+                                style="background-image: url(assets/close-up-portrait-cute-young-woman-holding-textbook-colored-pencils-posing-studio-isolated-pink_176532-9674.jpg);">
+                            </div>
+                        </div>
+                        <div class="review-info">
+                            <h3>
+                                Ananya Sharma
+                            </h3>
+                            <div class="rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-xs-12">
+                    <div class="zoom play-on-scroll">
+                        <div class="review-wrap active">
+                            <div class="review-content">
+                                <p>
+                                    "Sold my calculus semester textbook and HDMI monitor cable within 2 hours of listing. CampusSwap made campus handoffs completely hassle-free."
+                                </p>
+                                <div class="review-img bg-img"
+                                    style="background-image: url(assets/portrait-happy-young-man_171337-21716.jpg);">
+                                </div>
+                            </div>
+                            <div class="review-info">
+                                <h3>
+                                    Rohan Patel
+                                </h3>
+                                <div class="rating">
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-xs-12">
+                    <div class="review-wrap zoom play-on-scroll delay-4">
+                        <div class="review-content">
+                            <p>
+                                "Grabbed a portable wireless mini printer for my study notes and lab records. The item condition was marked accurately as 'Like New' and works flawlessly."
+                            </p>
+                            <div class="review-img bg-img"
+                                style="background-image: url(assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg);">
+                            </div>
+                        </div>
+                        <div class="review-info">
+                            <h3>
+                                Priya Verma
+                            </h3>
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END TESTIMONIAL SECTION -->
+    <!-- FOOTER SECTION -->
+    <section class="footer bg-img" style="background-image: url(assets/nordwood-themes-pYWrdKO5ksI-unsplash.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-xs-12">
+                    <h1>
+                        CampusSwap
+                    </h1>
+                    <br>
+                    <p>Your verified campus marketplace for secondhand laptops, tablets, chargers, power banks, cables, textbooks, semester notes, and stationery items. Save money and support sustainable student-to-student recycling.</p>
+                    <br>
+                    <p>Email: campusswapsupport@gmail.com</p>
+                    <p>Phone: +91 1234567890</p>
+
+                </div>
+                <div class="col-2 col-xs-12">
+                    <h1>
+                        Quick Links
+                    </h1>
+                    <br>
+                    <p>
+                        <a href="#about">
+                            About Us
+                        </a>
+                    </p>
+                    <p>
+                        <a href="#food-menu-section">
+                            Essentials
+                        </a>
+                    </p>
+                    <p>
+                        <a href="#list-item-section">
+                            Has Item To List?
+                        </a>
+                    </p>
+                    <p>
+                        <a href="#testimonial">
+                            Reviews
+                        </a>
+                    </p>
+                    <p>
+                        <a href="javascript:void(0)" onclick="openUserModal()">
+                            My Profile / Login
+                        </a>
+                    </p>
+                    <p>
+                        <a href="#cart-sidebar" onclick="openCart()">
+                            My Cart
+                        </a>
+                    </p>
+                </div>
+                <div class="col-4 col-xs-12">
+                    <h1>
+                        Stay Updated
+                    </h1>
+                    <br>
+                    <p>Get notified when seniors list new textbooks, laptops, lab gear, and semester tech essentials on your campus.</p>
+                    <form id="subscribe-form" class="input-group">
+                        <input type="email" id="subscribe-email-input" placeholder="Enter your campus email" required>
+                        <button type="submit">
+                            Subscribe
+                        </button>
+                    </form>
+                    <div id="subscribe-success-msg" class="subscribe-msg" style="display:none;">
+                        <i class='bx bx-check-circle'></i> Thanks for subscribing! You'll receive instant campus drop alerts.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END FOOTER SECTION -->
+
+    <!-- PRODUCT DETAILS MODAL -->
+    <div class="product-modal-overlay" id="product-modal-overlay"></div>
+    <div class="product-modal" id="product-modal">
+        <button class="close-product-modal" id="close-product-modal"><i class='bx bx-x'></i></button>
+        <div class="product-modal-content">
+            <div class="product-modal-img-wrap">
+                <img id="modal-product-img" src="" alt="Product Image">
+            </div>
+            <div class="product-modal-info">
+                <div class="product-modal-meta">
+                    <span class="product-modal-tag" id="modal-product-category">Featured Item</span>
+                    <span class="product-condition-badge" id="modal-product-condition">Brand New</span>
+                </div>
+                <h2 id="modal-product-title">Product Name</h2>
+                <div class="product-modal-price" id="modal-product-price">₹ 0</div>
+                <div class="product-condition-box">
+                    <span class="condition-label"><i class='bx bx-check-shield'></i> Condition:</span>
+                    <strong id="modal-condition-detail">Unused (Brand New)</strong>
+                </div>
+                <p class="product-modal-desc" id="modal-product-desc">
+                    Freshly prepared with authentic ingredients, bursting with authentic flavors and crafted to satisfy your cravings.
+                </p>
+                <div class="product-modal-actions">
+                    <button class="modal-add-cart-btn" id="modal-add-cart-btn">
+                        <i class='bx bx-cart-alt'></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART SIDEBAR MODAL -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span class="close-cart" id="close-cart-btn"><i class='bx bx-x'></i></span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Dynamic Cart Items -->
+            <p class="empty-cart-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">₹ 0</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toast">Item added to cart!</div>
+
+    <!-- AUTH & PROFILE MODAL -->
+    <div class="user-modal-overlay" id="user-modal-overlay"></div>
+    <div class="user-modal" id="user-modal">
+        <button class="close-user-modal" id="close-user-modal"><i class='bx bx-x'></i></button>
+
+        <!-- VIEW 1: LOGIN VIEW -->
+        <div class="modal-view" id="login-view">
+            <div class="user-modal-header">
+                <div class="user-avatar-icon"><i class='bx bx-user-circle'></i></div>
+                <h2>Student / Admin Login</h2>
+                <p>Login with any student email to manage your profile & listings.<br><small class="admin-hint-text">Admin credentials: <strong>admin@campusswap.com</strong> / <strong>admin123</strong></small></p>
+            </div>
+            <form id="login-form" class="auth-form">
+                <div class="auth-form-group">
+                    <label><i class='bx bx-envelope'></i> Email Address</label>
+                    <input type="email" id="login-email" placeholder="student@campus.edu or admin@campusswap.com" required>
+                </div>
+                <div class="auth-form-group">
+                    <label><i class='bx bx-lock-alt'></i> Password</label>
+                    <input type="password" id="login-password" placeholder="Enter any password" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">Login to Account</button>
+            </form>
+        </div>
+
+        <!-- VIEW 2: BUYER / STUDENT PROFILE VIEW -->
+        <div class="modal-view" id="profile-view" style="display:none;">
+            <div class="user-modal-header">
+                <div class="user-avatar-badge" id="profile-avatar-initials">S</div>
+                <h2 id="profile-display-name">Student Profile</h2>
+                <span class="user-id-badge" id="profile-user-id">ID: CS-XXXXX</span>
+            </div>
+            
+            <form id="profile-edit-form" class="profile-form">
+                <div class="profile-form-grid">
+                    <div class="auth-form-group">
+                        <label><i class='bx bx-user'></i> Full Name</label>
+                        <input type="text" id="profile-name-input" required>
+                    </div>
+                    <div class="auth-form-group">
+                        <label><i class='bx bx-envelope'></i> Email (Read-only)</label>
+                        <input type="email" id="profile-email-input" readonly disabled>
+                    </div>
+                    <div class="auth-form-group">
+                        <label><i class='bx bx-phone'></i> Phone Number</label>
+                        <input type="tel" id="profile-phone-input" required>
+                    </div>
+                    <div class="auth-form-group">
+                        <label><i class='bx bx-map-pin'></i> Campus Hostel / Address</label>
+                        <input type="text" id="profile-address-input" required>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button type="submit" class="save-profile-btn"><i class='bx bx-check'></i> Save Profile</button>
+                    <button type="button" class="logout-btn" id="logout-btn"><i class='bx bx-log-out'></i> Logout</button>
+                </div>
+            </form>
+
+            <div class="profile-listings-section">
+                <h3><i class='bx bx-list-check'></i> My Submitted Listings</h3>
+                <div class="my-listings-list" id="my-listings-container">
+                    <p class="empty-state-text">You haven't submitted any listing requests yet.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW 3: ADMIN DASHBOARD VIEW -->
+        <div class="modal-view" id="admin-view" style="display:none;">
+            <div class="admin-header">
+                <div>
+                    <span class="admin-shield-badge"><i class='bx bx-shield-quarter'></i> Master Admin</span>
+                    <h2>Admin Management Console</h2>
+                </div>
+                <button type="button" class="logout-btn" id="admin-logout-btn"><i class='bx bx-log-out'></i> Logout</button>
+            </div>
+
+            <div class="admin-tabs">
+                <button type="button" class="admin-tab-btn active" id="tab-requests-btn" onclick="switchAdminTab('requests')">
+                    <i class='bx bx-bell'></i> Listing Requests (<span id="admin-requests-badge">0</span>)
+                </button>
+                <button type="button" class="admin-tab-btn" id="tab-listings-btn" onclick="switchAdminTab('listings')">
+                    <i class='bx bx-grid-alt'></i> Active Listings (<span id="admin-listings-badge">0</span>)
+                </button>
+            </div>
+
+            <!-- Tab 1: Requests -->
+            <div class="admin-tab-content" id="admin-requests-tab">
+                <div id="admin-requests-list" class="admin-cards-list">
+                    <!-- Dynamic Requests -->
+                </div>
+            </div>
+
+            <!-- Tab 2: Listings -->
+            <div class="admin-tab-content" id="admin-listings-tab" style="display:none;">
+                <div id="admin-listings-list" class="admin-cards-list">
+                    <!-- Dynamic Listings -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN EDIT LISTING MODAL -->
+    <div class="admin-edit-modal-overlay" id="admin-edit-overlay"></div>
+    <div class="admin-edit-modal" id="admin-edit-modal">
+        <button class="close-admin-edit" id="close-admin-edit"><i class='bx bx-x'></i></button>
+        <h3>Edit Item Listing</h3>
+        <form id="admin-edit-form" class="edit-listing-form">
+            <input type="hidden" id="edit-item-id">
+            <div class="auth-form-group">
+                <label>Item Name</label>
+                <input type="text" id="edit-item-title" required>
+            </div>
+            <div class="auth-form-group">
+                <label>Category</label>
+                <select id="edit-item-category">
+                    <option value="tech">Electronics & Tech</option>
+                    <option value="books">Books & Notes</option>
+                    <option value="stationery">Stationery & Tools</option>
+                    <option value="cables">Cables & Adapters</option>
+                </select>
+            </div>
+            <div class="auth-form-group">
+                <label>Price (₹)</label>
+                <input type="number" id="edit-item-price" min="0" required>
+            </div>
+            <div class="auth-form-group">
+                <label>Condition</label>
+                <select id="edit-item-condition">
+                    <option value="Unused (Brand New)">Unused (Brand New)</option>
+                    <option value="Excellent (Like a New)">Excellent (Like a New)</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Acceptable">Acceptable</option>
+                </select>
+            </div>
+            <div class="auth-form-group">
+                <label>Image Path / URL</label>
+                <input type="text" id="edit-item-image" required>
+            </div>
+            <div class="auth-form-group">
+                <label>Description</label>
+                <textarea id="edit-item-desc" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="save-profile-btn">Save Changes</button>
+        </form>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
