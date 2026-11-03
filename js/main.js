@@ -36,8 +36,9 @@ function applyItemSearch() {
     if (!foodMenuList) return
 
     const query = itemSearchInput ? itemSearchInput.value.trim().toLocaleLowerCase() : ''
-    const activeCategory = foodCategory.querySelector('button.active')
+    const activeCategory = foodCategory ? foodCategory.querySelector('button.active') : null
     const categoryType = activeCategory ? activeCategory.getAttribute('data-food-type') : 'all'
+    // Query the live catalog every time so newly approved listings are searchable too.
     const items = foodMenuList.querySelectorAll('.food-item')
     let visibleCount = 0
 
@@ -48,11 +49,7 @@ function applyItemSearch() {
         const matchesCategory = categoryType === 'all' || item.classList.contains(categoryType + '-type')
         const isVisible = matchesName && matchesCategory
 
-        if (query) {
-            item.style.display = isVisible ? 'block' : 'none'
-        } else {
-            item.style.removeProperty('display')
-        }
+        item.hidden = !isVisible
         if (isVisible) visibleCount++
     })
 
@@ -61,10 +58,11 @@ function applyItemSearch() {
         emptyMessage = document.createElement('p')
         emptyMessage.id = 'item-search-empty'
         emptyMessage.className = 'item-search-empty'
+        emptyMessage.setAttribute('role', 'status')
         emptyMessage.textContent = 'No items found. Try a different name or category.'
         foodMenuList.insertAdjacentElement('afterend', emptyMessage)
     }
-    emptyMessage.hidden = !query || visibleCount > 0
+    emptyMessage.hidden = visibleCount > 0
 
     if (clearItemSearchBtn) clearItemSearchBtn.hidden = !query
 }
@@ -540,22 +538,24 @@ function setupSubscribeForm() {
         const email = emailInput ? emailInput.value.trim() : ''
 
         if (email) {
-            // Save to localStorage list of subscribers
+            // Demo behavior: retain subscriptions in this browser only.
             const subscribers = JSON.parse(localStorage.getItem('cs_subscribers')) || []
-            if (!subscribers.includes(email)) {
+            const alreadySubscribed = subscribers.some((savedEmail) => savedEmail.toLowerCase() === email.toLowerCase())
+
+            if (!alreadySubscribed) {
                 subscribers.push(email)
                 localStorage.setItem('cs_subscribers', JSON.stringify(subscribers))
             }
 
             if (successMsg) {
+                successMsg.innerHTML = alreadySubscribed
+                    ? "<i class='bx bx-check-circle'></i> This email is already subscribed."
+                    : "<i class='bx bx-check-circle'></i> Thanks for subscribing! You'll receive campus listing alerts."
                 successMsg.style.display = 'flex'
             }
 
-            if (emailInput) {
-                emailInput.value = ''
-            }
-
-            showToast('Subscribed! You will get campus listing alerts.')
+            if (emailInput) emailInput.value = ''
+            showToast(alreadySubscribed ? 'This email is already subscribed.' : 'Subscription successful!')
         }
     })
 }
@@ -829,7 +829,12 @@ function setupListingForm() {
         if (fileChosenName) fileChosenName.textContent = 'Default: assets/calculator.png (or pick custom file/URL)'
         imgUrlInput.value = 'assets/calculator.png'
 
-        showToast('Request submitted! It will be listed once approved by admin.')
+        const successMsg = document.getElementById('listing-success-msg')
+        if (successMsg) {
+            successMsg.textContent = `Your request for "${name}" was submitted successfully (Request ID: ${newRequest.id}). It will appear in the catalog after admin approval.`
+            successMsg.hidden = false
+        }
+        showToast('Listing request submitted successfully!')
     })
 }
 

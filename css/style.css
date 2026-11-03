@@ -3005,3 +3005,21 @@ section {
     font-size: 2.5rem;
     color: var(--grey);
 }
+
+/* Accessible item listing success feedback */
+.form-success-msg {
+    margin-top: 1rem;
+    padding: .9rem 1.1rem;
+    color: #087443;
+    background: rgba(16, 185, 129, .12);
+    border: 1px solid rgba(16, 185, 129, .35);
+    border-radius: .9rem;
+    font-size: .92rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.form-success-msg[hidden],
+.food-item[hidden] {
+    display: none !important;
+}
